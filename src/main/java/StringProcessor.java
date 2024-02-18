@@ -17,9 +17,9 @@ public class StringProcessor {
     private int longestStr;
 
     StringProcessor() {
-        integers = new ArrayList<String>();
-        floats = new ArrayList<String>();
-        strings = new ArrayList<String>();
+        integers = new ArrayList<>();
+        floats = new ArrayList<>();
+        strings = new ArrayList<>();
     }
     public void process(List<String> input) {
         for (var it : input) {
