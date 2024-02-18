@@ -17,7 +17,7 @@ public class Parser {
     public void parse(String[] args) {
         CommandLineParser parser = new DefaultParser();
         HelpFormatter formatter = new HelpFormatter();
-        CommandLine cmd = null;
+        CommandLine cmd;
 
         try {
             cmd = parser.parse(options, args);

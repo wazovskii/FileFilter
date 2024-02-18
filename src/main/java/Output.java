@@ -38,25 +38,25 @@ public class Output {
         }
     }
     public void dumpToFiles(StringProcessor info, Parser parser) {
-        String prefix;
         boolean needToCreateDir = info.integersNotEmpty() || info.floatsNotEmpty() || info.stringsNotEmpty();
         if (parser.isPathProvided() && needToCreateDir) {
             new File(parser.getPath()).mkdirs();
         }
 
         String delimiter = (parser.isPathProvided() && needToCreateDir) ? "/" : "";
+        String prefix = parser.getPath() + delimiter + parser.getPrefix();
 
         if (info.integersNotEmpty()) {
-            File integers = createFile(parser.getPath() + delimiter + parser.getPrefix() + "integers.txt");
+            File integers = createFile( prefix + "integers.txt");
             writeToFile(integers, parser.isFileAppending(), String.join("\n", info.getIntegers()));
         }
         if (info.floatsNotEmpty()) {
-            File floats = createFile(parser.getPath() + delimiter + parser.getPrefix() + "floats.txt");
+            File floats = createFile(prefix + "floats.txt");
             writeToFile(floats, parser.isFileAppending(), String.join("\n", info.getFloats()));
         }
 
         if (info.stringsNotEmpty()) {
-            File strings = createFile(parser.getPath() + delimiter + parser.getPrefix() + "strings.txt");
+            File strings = createFile(prefix + "strings.txt");
             writeToFile(strings, parser.isFileAppending(), String.join("\n", info.getStrings()));
         }
     }

@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class FileReader {
     private final List<String> filesContents;
     public FileReader() {
-        filesContents = new ArrayList<String>();
+        filesContents = new ArrayList<>();
     }
     public void read(List<String> files) {
         for (var file: files) {

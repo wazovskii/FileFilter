@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringProcessor {
-    private List<String> integers;
-    private List<String> floats;
-    private List<String> strings;
+    private final List<String> integers;
+    private final List<String> floats;
+    private final List<String> strings;
     private long intMin;
     private long intMax;
     private long intSum;
